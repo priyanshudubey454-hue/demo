@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kabir Singh — Photographer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E0E0E;
+    --text:#F5F0E8;
+    --amber:#C9832E;
+    --muted:#8A8578;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;}
+  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:.03em;}
+
+  .filmstrip{
+    display:flex;
+    overflow-x:auto;
+    background:#000;
+    padding:10px 0;
+    border-bottom:1px solid #262626;
+    gap:2px;
+  }
+  .filmstrip::before, .filmstrip::after{content:none;}
+  .sprocket-row{display:flex;gap:6px;padding:0 10px;align-items:center;}
+  .sprocket{width:6px;height:6px;background:#333;border-radius:1px;flex-shrink:0;}
+  .filmstrip a{
+    flex-shrink:0;
+    padding:6px 18px;
+    font-size:12px;
+    letter-spacing:.1em;
+    color:var(--muted);
+    text-decoration:none;
+    text-transform:uppercase;
+    border-left:1px solid #262626;
+  }
+  .filmstrip a:hover{color:var(--amber);}
+
+  header{
+    padding:70px 40px 30px;
+    text-align:center;
+  }
+  header h1{font-size:clamp(48px,10vw,110px);line-height:.9;}
+  header .sub{color:var(--muted);font-size:14px;letter-spacing:.15em;margin-top:12px;text-transform:uppercase;}
+
+  .gallery{
+    columns:3 260px;
+    column-gap:4px;
+    padding:20px;
+  }
+  .gallery figure{
+    margin:0 0 4px;
+    break-inside:avoid;
+    position:relative;
+    overflow:hidden;
+  }
+  .gallery img{width:100%;display:block;filter:grayscale(8%) contrast(1.05);transition:transform .6s ease;}
+  .gallery figure:hover img{transform:scale(1.03);}
+  .gallery figcaption{
+    position:absolute;bottom:0;left:0;right:0;
+    padding:16px;
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .gallery figure:hover figcaption{opacity:1;}
+  .gallery figcaption .t{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.03em;}
+  .gallery figcaption .m{font-size:11px;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
+
+  .statement{
+    max-width:640px;
+    margin:80px auto;
+    text-align:center;
+    padding:0 24px;
+  }
+  .statement p{font-size:19px;line-height:1.7;color:#D8D2C4;}
+  .statement .amber{color:var(--amber);}
+
+  footer{
+    border-top:1px solid #262626;
+    padding:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12px;
+    letter-spacing:.08em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+  footer a{color:var(--text);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div class="filmstrip">
+  <div class="sprocket-row"><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div></div>
+  <a href="#">Portraits</a>
+  <a href="#">Street</a>
+  <a href="#">Landscape</a>
+  <a href="#">Travel</a>
+  <a href="#">Film</a>
+  <div class="sprocket-row"><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div></div>
+</div>
+
+<header>
+  <h1 class="display">KABIR SINGH</h1>
+  <div class="sub">Documentary &amp; Travel Photography — Based in Delhi</div>
+</header>
+
+<div class="gallery">
+  <figure><img src="https://picsum.photos/seed/kabir1/500/700" alt=""><figcaption><div class="t">Ladakh, Winter</div><div class="m">2025 · Landscape</div></figcaption></figure>
+  <figure><img src="https://picsum.photos/seed/kabir2/500/620" alt=""><figcaption><div class="t">Chandni Chowk</div><div class="m">2025 · Street</div></figcaption></figure>
+  <figure><img src="https://picsum.photos/seed/kabir3/500/750" alt=""><figcaption><div class="t">Fisherman, Gokarna</div><div class="m">2024 · Portrait</div></figcaption></figure>
+  <figure><img src="https://picsum.photos/seed/kabir4/500/650" alt=""><figcaption><div class="t">Monsoon, Kerala</div><div class="m">2024 · Travel</div></figcaption></figure>
+  <figure><img src="https://picsum.photos/seed/kabir5/500/700" alt=""><figcaption><div class="t">Old Delhi Rooftops</div><div class="m">2023 · Street</div></figcaption></figure>
+  <figure><img src="https://picsum.photos/seed/kabir6/500/600" alt=""><figcaption><div class="t">Spiti Valley</div><div class="m">2023 · Landscape</div></figcaption></figure>
+</div>
+
+<div class="statement">
+  <p>I shoot to remember what a place felt like, not just what it looked like — <span class="amber">grain, imperfection and quiet moments</span> included.</p>
+</div>
+
+<footer>
+  <span>kabir.singh@example.com</span>
+  <a href="#">Instagram</a>
+  <span>Sample portfolio — demo content</span>
+</footer>
+
+</body>
+</html>

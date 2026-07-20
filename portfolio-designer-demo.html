@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Priya Nair — Visual Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7;
+    --ink:#1A1A1A;
+    --pink:#FF3366;
+    --blue:#1E3A8A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;}
+  .regbar{
+    display:flex;
+    height:10px;
+  }
+  .regbar div{flex:1;}
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 48px;
+  }
+  header .name{font-family:'Fraunces',serif;font-weight:600;font-size:20px;}
+  nav a{margin-left:28px;font-size:14px;color:var(--ink);text-decoration:none;}
+  .hero{
+    padding:40px 48px 90px;
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:40px;
+    align-items:end;
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:clamp(40px,7vw,84px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 span{color:var(--pink);}
+  .hero .sub{font-size:16px;color:#555;max-width:340px;margin-bottom:6px;}
+  main{padding:0 48px 100px;}
+  .index-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:20px 0;
+    border-top:2px solid var(--ink);
+    font-family:'Fraunces',serif;
+  }
+  .index-row:last-child{border-bottom:2px solid var(--ink);}
+  .index-row .year{font-size:15px;color:#999;font-family:'Inter',sans-serif;width:70px;}
+  .index-row h3{font-size:26px;font-weight:600;flex:1;padding:0 20px;}
+  .index-row .type{font-size:13px;color:#777;font-family:'Inter',sans-serif;width:160px;text-align:right;}
+
+  .work-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2px;
+    margin:70px 0;
+    background:var(--ink);
+  }
+  .work-grid figure{
+    background:var(--paper);
+    aspect-ratio:4/5;
+    overflow:hidden;
+    position:relative;
+    margin:0;
+  }
+  .work-grid img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%);transition:transform .5s ease;}
+  .work-grid figure:hover img{transform:scale(1.04);}
+  .work-grid figcaption{
+    position:absolute;bottom:0;left:0;right:0;
+    padding:12px 14px;
+    background:linear-gradient(transparent,rgba(0,0,0,.6));
+    color:#fff;font-size:13px;
+  }
+
+  .swatchbar{
+    display:flex;
+    height:56px;
+    border-top:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+    margin:70px 0;
+  }
+  .swatchbar div{flex:1;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.05em;}
+
+  .about{display:grid;grid-template-columns:1fr 1.4fr;gap:50px;padding:60px 0;}
+  .about h2{font-family:'Fraunces',serif;font-size:32px;font-weight:600;margin-bottom:18px;}
+  .about p{font-size:16px;color:#444;max-width:480px;}
+
+  footer{
+    border-top:2px solid var(--ink);
+    padding:36px 48px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    color:#777;
+  }
+</style>
+</head>
+<body>
+
+<div class="regbar">
+  <div style="background:var(--pink)"></div>
+  <div style="background:var(--blue)"></div>
+  <div style="background:var(--ink)"></div>
+  <div style="background:var(--paper);border:1px solid #ddd"></div>
+</div>
+
+<header>
+  <div class="name">Priya Nair</div>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Visual identity<br>for brands with <span>something to say.</span></h1>
+  <p class="sub">Branding, packaging & art direction for startups and independent labels. Based in Mumbai, working worldwide.</p>
+</div>
+
+<main id="work">
+  <div class="index-row"><span class="year">2026</span><h3>Kaaya Skincare</h3><span class="type">Brand identity</span></div>
+  <div class="index-row"><span class="year">2025</span><h3>Verse Records</h3><span class="type">Packaging + logo</span></div>
+  <div class="index-row"><span class="year">2025</span><h3>Nimbu Cold Press</h3><span class="type">Brand identity</span></div>
+  <div class="index-row"><span class="year">2024</span><h3>Studio Aanya</h3><span class="type">Art direction</span></div>
+
+  <div class="work-grid">
+    <figure><img src="https://picsum.photos/seed/kaaya/500/620" alt=""><figcaption>Kaaya Skincare — packaging</figcaption></figure>
+    <figure><img src="https://picsum.photos/seed/verse/500/620" alt=""><figcaption>Verse Records — sleeve art</figcaption></figure>
+    <figure><img src="https://picsum.photos/seed/nimbu/500/620" alt=""><figcaption>Nimbu — label design</figcaption></figure>
+  </div>
+
+  <div class="swatchbar">
+    <div style="background:#FF3366;color:#fff">FF3366</div>
+    <div style="background:#1E3A8A;color:#fff">1E3A8A</div>
+    <div style="background:#F4D35E">F4D35E</div>
+    <div style="background:#0B5345;color:#fff">0B5345</div>
+    <div style="background:#1A1A1A;color:#fff">1A1A1A</div>
+  </div>
+
+  <div class="about" id="about">
+    <h2>About</h2>
+    <p>I'm a visual designer with six years of experience helping early-stage brands find a look that actually feels like them — not a template pulled off a moodboard. My process starts with the client's own materials: their product, their voice, their world.</p>
+  </div>
+</main>
+
+<footer id="contact">
+  <span>priya@example.design</span>
+  <span>Instagram / Behance</span>
+  <span>Sample portfolio — demo content</span>
+</footer>
+
+</body>
+</html>

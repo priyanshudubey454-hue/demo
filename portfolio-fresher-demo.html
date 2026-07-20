@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sneha Verma — Computer Science Graduate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2B3A55;
+    --bg:#F7F8FA;
+    --mint:#3EB489;
+    --text:#33394A;
+    --muted:#7B8299;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;}
+  main{max-width:760px;margin:0 auto;padding:60px 24px 100px;}
+
+  .hero{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:36px;border-bottom:2px solid var(--ink);}
+  .hero h1{font-size:34px;font-weight:800;color:var(--ink);}
+  .hero .role{color:var(--mint);font-weight:700;font-size:15px;margin-top:6px;}
+  .hero .loc{color:var(--muted);font-size:13px;margin-top:10px;}
+  .status{
+    background:var(--ink);color:#fff;font-size:12px;font-weight:700;
+    padding:6px 14px;border-radius:20px;white-space:nowrap;
+  }
+
+  section{margin-top:44px;}
+  h2{
+    font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:18px;
+  }
+
+  .timeline{border-left:2px solid #DCE0E8;padding-left:22px;}
+  .titem{position:relative;padding-bottom:26px;}
+  .titem::before{
+    content:"";position:absolute;left:-28px;top:4px;width:12px;height:12px;
+    border-radius:50%;background:var(--mint);border:3px solid var(--bg);
+  }
+  .titem .when{font-size:12px;color:var(--muted);font-weight:700;}
+  .titem h3{font-size:17px;font-weight:700;color:var(--ink);margin-top:2px;}
+  .titem p{font-size:14px;color:var(--muted);margin-top:4px;}
+
+  .build-log{
+    background:#fff;border:1px solid #E2E5EC;border-radius:10px;padding:20px;
+    font-family:'Courier New',monospace;font-size:13px;
+  }
+  .build-log .row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #EEF0F4;}
+  .build-log .row:last-child{border-bottom:none;}
+  .bar{width:140px;height:8px;background:#E2E5EC;border-radius:4px;overflow:hidden;}
+  .bar i{display:block;height:100%;background:var(--mint);}
+  .ok{color:var(--mint);font-weight:700;font-size:11px;}
+
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .card{background:#fff;border:1px solid #E2E5EC;border-radius:10px;padding:20px;}
+  .card h3{font-size:16px;color:var(--ink);margin-bottom:6px;}
+  .card p{font-size:13.5px;color:var(--muted);margin-bottom:10px;}
+  .card .stack{font-size:11px;color:var(--mint);font-weight:700;}
+
+  .contact-row{display:flex;gap:20px;flex-wrap:wrap;}
+  .contact-row a{
+    color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;
+    border-bottom:2px solid var(--mint);padding-bottom:2px;
+  }
+  footer{margin-top:60px;font-size:12px;color:var(--muted);text-align:center;}
+</style>
+</head>
+<body>
+<main>
+
+  <div class="hero">
+    <div>
+      <h1>Sneha Verma</h1>
+      <div class="role">B.Tech Computer Science, 2026</div>
+      <div class="loc">Pune, India</div>
+    </div>
+    <div class="status">Open to work</div>
+  </div>
+
+  <section>
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="titem">
+        <div class="when">2022 — 2026</div>
+        <h3>B.Tech, Computer Science</h3>
+        <p>MIT World Peace University, Pune · CGPA 8.7/10</p>
+      </div>
+      <div class="titem">
+        <div class="when">Summer 2025</div>
+        <h3>Software Engineering Intern</h3>
+        <p>Built and shipped a customer support dashboard used by 40+ internal agents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills — compiling...</h2>
+    <div class="build-log">
+      <div class="row"><span>Python / Java</span><div class="bar"><i style="width:90%"></i></div><span class="ok">READY</span></div>
+      <div class="row"><span>React &amp; JavaScript</span><div class="bar"><i style="width:80%"></i></div><span class="ok">READY</span></div>
+      <div class="row"><span>SQL &amp; Databases</span><div class="bar"><i style="width:75%"></i></div><span class="ok">READY</span></div>
+      <div class="row"><span>Data Structures &amp; Algorithms</span><div class="bar"><i style="width:85%"></i></div><span class="ok">READY</span></div>
+      <div class="row"><span>Git &amp; Version Control</span><div class="bar"><i style="width:88%"></i></div><span class="ok">READY</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>CampusConnect</h3>
+        <p>A college event & club management platform used by 500+ students.</p>
+        <div class="stack">React · Firebase · Tailwind</div>
+      </div>
+      <div class="card">
+        <h3>SmartQueue</h3>
+        <p>ML model predicting canteen wait times from historical footfall data.</p>
+        <div class="stack">Python · scikit-learn · Flask</div>
+      </div>
+      <div class="card">
+        <h3>ExpenseSplit</h3>
+        <p>A shared-expense tracker for hostel roommates with UPI reminders.</p>
+        <div class="stack">Node.js · MongoDB</div>
+      </div>
+      <div class="card">
+        <h3>Portfolio v1</h3>
+        <p>This very site — hand-coded, no template, deployed on Vercel.</p>
+        <div class="stack">HTML · CSS · JS</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-row">
+      <a href="#">sneha.verma@example.com</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+      <a href="#">Resume (PDF)</a>
+    </div>
+  </section>
+
+  <footer>Sample portfolio — demo content built for client presentation</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-dark: #1e293b;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styling */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 8rem 0 4rem 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-right: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--text-muted);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Bento Grid Architecture for Projects */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-primary);
+            border-radius: 2px;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .bento-card {
+            background: var(--card-dark);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -15px rgba(56, 189, 248, 0.3);
+        }
+
+        .col-span-2 {
+            grid-column: span 2;
+        }
+
+        .card-icon {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .bento-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bento-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+        }
+
+        /* Metrics / Social Proof Section */
+        .metrics-bar {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .metric-item h2 {
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+        }
+
+        .metric-item p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: var(--card-dark);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 6rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .col-span-2 {
+                grid-column: span 1;
+            }
+            .metrics-bar {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav>
+        <div class="logo">Dev&Creator.io</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#work">Featured Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1>Hi, I'm <span>[Aapka Naam]</span>.<br>I Build Digital Solutions & Scalable Systems.</h1>
+            <p>Full-Stack Developer aur Content Specialist. Main robust code likhta hoon aur brands ke liye high-converting media assets design karta hoon.</p>
+            <div class="cta-buttons">
+                <a href="#work" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Let's Talk</a>
+            </div>
+        </section>
+
+        <!-- Advanced Bento Grid Portfolio Section -->
+        <section id="work">
+            <h2 class="section-title">Featured Projects & Experience</h2>
+            
+            <div class="bento-grid">
+                
+                <!-- Card 1: Main Coding Project (Large Layout) -->
+                <div class="bento-card col-span-2">
+                    <i data-lucide="layers" class="card-icon"></i>
+                    <h3>AI-Powered SaaS Interview Dashboard</h3>
+                    <p>Ek advanced AI web application jo user ke system analytics aur real-time audio core input ko analyze karke automated feedback generate karti hai. Iska latency rate sub-50ms optimize kiya gaya hai.</p>
+                    <div class="tag-container">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">OpenAI API</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Growth Metrics / Creator Proof -->
+                <div class="bento-card">
+                    <i data-lucide="trending-up" class="card-icon"></i>
+                    <h3>Audience Retention Engine</h3>
+                    <p>Designed virality systems aur retention-focused video editing workflows jisne client ki conversion rates ko 4% se badhakar 11.8% kar diya.</p>
+                    <div class="tag-container">
+                        <span class="tag">Video Architecture</span>
+                        <span class="tag">CTR Growth</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Cloud/DevOps Core -->
+                <div class="bento-card">
+                    <i data-lucide="cloud" class="card-icon"></i>
+                    <h3>Cloud Architecture & Chat Systems</h3>
+                    <p>Low-latency WebSocket servers ka continuous deployment, backed by Redis for multi-concurrency caching backend architecture.</p>
+                    <div class="tag-container">
+                        <span class="tag">AWS S3/EC2</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Redis</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Services Offered / Skill Pack (Large Layout) -->
+                <div class="bento-card col-span-2">
+                    <i data-lucide="cpu" class="card-icon"></i>
+                    <h3>Technical Solutions & Consulting</h3>
+                    <p>Main scale-ready web architecture se lekar high-impact corporate brand system identities tak sab design karta hoon. Custom integration se workflow tasks automation me maharat.</p>
+                    <div class="tag-container">
+                        <span class="tag">Full Stack Development</span>
+                        <span class="tag">Media Production</span>
+                        <span class="tag">UI/UX Design</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Global Social Proof / Numbers Bar -->
+            <div class="metrics-bar">
+                <div class="metric-item">
+                    <h2>99.9%</h2>
+                    <p>Code Architecture Uptime</p>
+                </div>
+                <div class="metric-item">
+                    <h2>5M+</h2>
+                    <p>Client Content Views</p>
+                </div>
+                <div class="metric-item">
+                    <h2>20+</h2>
+                    <p>Projects Successfully Shipped</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-box">
+                <i data-lucide="mail" style="color: var(--accent-primary); width: 40px; height: 40px; margin-bottom: 1rem;"></i>
+                <h3>Let's collaborate on your next project</h3>
+                <p>Chahe aapko koi full-stack application banwani ho ya content scale karna ho, feel free to drop a message!</p>
+                <a href="mailto:your.email@example.com" class="btn-primary" style="display: inline-block; text-decoration: none; color: #000;">Send An Email</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 [Aapka Naam]. Crafted from scratch. All rights reserved.</p>
+    </footer>
+
+    <!-- Lucide Icons Script Integration -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

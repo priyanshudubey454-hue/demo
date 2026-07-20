@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arjun Mehta — Backend Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16140F;
+    --panel:#1F1C15;
+    --gold:#D4A73C;
+    --sage:#6B8F71;
+    --text:#EDE7D9;
+    --muted:#948C77;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  header{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 32px;
+    border-bottom:1px solid #2C2820;
+    background:var(--panel);
+  }
+  .dot{width:10px;height:10px;border-radius:50%;}
+  .dot.r{background:#C9564C;} .dot.y{background:#D4A73C;} .dot.g{background:#6B8F71;}
+  header span{margin-left:16px;color:var(--muted);font-size:13px;}
+  main{max-width:780px;margin:0 auto;padding:64px 24px 100px;}
+  .hero h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(32px,6vw,52px);
+    letter-spacing:-0.02em;
+  }
+  .hero .role{color:var(--gold);font-size:18px;margin-top:6px;}
+  .terminal{
+    margin-top:32px;
+    background:var(--panel);
+    border:1px solid #2C2820;
+    border-radius:8px;
+    padding:20px 22px;
+    font-size:14px;
+  }
+  .terminal .prompt{color:var(--sage);}
+  .terminal .line{white-space:pre;overflow:hidden;border-right:2px solid var(--gold);width:0;animation:type 2.6s steps(40,end) forwards;}
+  @keyframes type{to{width:100%;border-right-color:transparent;}}
+  @media (prefers-reduced-motion:reduce){.terminal .line{width:100%;animation:none;border-right:none;}}
+  section{margin-top:72px;}
+  .section-label{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--muted);
+    font-size:13px;
+    text-transform:lowercase;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .section-label::after{content:"";flex:1;height:1px;background:#2C2820;}
+  .commit{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:18px;
+    padding:18px 0;
+    border-bottom:1px solid #2C2820;
+  }
+  .commit .hash{color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:13px;}
+  .commit .date{color:var(--muted);font-size:12px;margin-top:4px;}
+  .commit h3{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:500;margin-bottom:6px;}
+  .commit p{color:#C9C2AE;font-size:14px;max-width:520px;}
+  .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;}
+  .tags span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    padding:3px 9px;
+    border:1px solid #3A3527;
+    border-radius:4px;
+    color:var(--sage);
+  }
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;}
+  .skill{
+    background:var(--panel);
+    border:1px solid #2C2820;
+    border-radius:6px;
+    padding:12px 14px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+  }
+  .skill .bar{height:3px;background:#2C2820;border-radius:2px;margin-top:8px;overflow:hidden;}
+  .skill .bar i{display:block;height:100%;background:var(--gold);}
+  .config{
+    background:var(--panel);
+    border:1px solid #2C2820;
+    border-radius:8px;
+    padding:22px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13.5px;
+  }
+  .config .k{color:var(--sage);}
+  .config .v{color:var(--text);}
+  .config a{color:var(--gold);text-decoration:none;}
+  .config a:hover{text-decoration:underline;}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:30px;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+  <span>~/arjun-mehta/portfolio — zsh</span>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Arjun Mehta</h1>
+    <div class="role mono">Backend Engineer · Distributed Systems</div>
+    <div class="terminal mono">
+      <div><span class="prompt">$</span> whoami</div>
+      <div class="line">Building reliable APIs that don't wake people up at 3am.</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-label">git log --oneline (recent work)</div>
+
+    <div class="commit">
+      <div>
+        <div class="hash">a3f9c2e</div>
+        <div class="date">Mar 2026</div>
+      </div>
+      <div>
+        <h3>Payments retry engine</h3>
+        <p>Rebuilt the retry/backoff layer for a fintech client's payment gateway, cutting failed-transaction support tickets by 40%.</p>
+        <div class="tags"><span>Go</span><span>PostgreSQL</span><span>Redis</span></div>
+      </div>
+    </div>
+
+    <div class="commit">
+      <div>
+        <div class="hash">7d1e88b</div>
+        <div class="date">Dec 2025</div>
+      </div>
+      <div>
+        <h3>Realtime inventory sync</h3>
+        <p>Event-driven sync between warehouse system and storefront for a D2C brand, replacing a nightly batch job with sub-second updates.</p>
+        <div class="tags"><span>Node.js</span><span>Kafka</span><span>Docker</span></div>
+      </div>
+    </div>
+
+    <div class="commit">
+      <div>
+        <div class="hash">f402a91</div>
+        <div class="date">Sep 2025</div>
+      </div>
+      <div>
+        <h3>Internal API gateway</h3>
+        <p>Designed a lightweight gateway to unify auth and rate-limiting across 12 internal services for a Series A startup.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>AWS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">stack --installed</div>
+    <div class="skills-grid">
+      <div class="skill">Go<div class="bar"><i style="width:88%"></i></div></div>
+      <div class="skill">Node.js<div class="bar"><i style="width:92%"></i></div></div>
+      <div class="skill">PostgreSQL<div class="bar"><i style="width:85%"></i></div></div>
+      <div class="skill">Docker<div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill">AWS<div class="bar"><i style="width:75%"></i></div></div>
+      <div class="skill">Kafka<div class="bar"><i style="width:70%"></i></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">cat contact.yaml</div>
+    <div class="config">
+      <div><span class="k">email:</span> <span class="v">arjun.mehta@example.dev</span></div>
+      <div><span class="k">github:</span> <a href="#">github.com/arjunmehta</a></div>
+      <div><span class="k">availability:</span> <span class="v">open to freelance, Apr 2026 onward</span></div>
+      <div><span class="k">timezone:</span> <span class="v">IST (UTC+5:30)</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>// this is demo content — sample portfolio built for a client presentation</footer>
+
+</body>
+</html>

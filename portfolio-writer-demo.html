@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rohan Das — Writer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEAE3;
+    --ink:#252220;
+    --teal:#1D4E4E;
+    --muted:#7A7468;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--paper);color:var(--ink);font-family:'Newsreader',serif;}
+  header{
+    max-width:640px;margin:0 auto;padding:70px 24px 40px;
+    border-bottom:1px solid #D3CEC1;
+  }
+  header h1{font-size:40px;font-weight:600;}
+  header .tag{font-family:'Inter',sans-serif;color:var(--teal);font-size:14px;margin-top:10px;letter-spacing:.03em;}
+
+  main{max-width:640px;margin:0 auto;padding:50px 24px 100px;position:relative;}
+
+  .piece{margin-bottom:64px;position:relative;}
+  .piece .meta{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+  .piece h2{font-size:27px;font-weight:600;margin-bottom:14px;}
+  .piece p{font-size:18px;line-height:1.75;color:#3A362F;}
+  .piece p + p{margin-top:16px;}
+
+  blockquote{
+    font-style:italic;
+    font-size:22px;
+    color:var(--teal);
+    border-left:3px solid var(--teal);
+    padding-left:20px;
+    margin:26px 0;
+    line-height:1.5;
+  }
+
+  .margin-note{
+    font-family:'Caveat',cursive;
+    color:var(--teal);
+    font-size:20px;
+    position:absolute;
+    right:-150px;
+    width:130px;
+    line-height:1.2;
+    transform:rotate(-1.5deg);
+  }
+  @media (max-width:900px){ .margin-note{display:none;} }
+
+  .read-more{font-family:'Inter',sans-serif;font-size:13px;color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal);}
+
+  .divider{width:40px;height:2px;background:var(--teal);margin:0 auto 64px;}
+
+  footer{
+    border-top:1px solid #D3CEC1;
+    max-width:640px;margin:0 auto;
+    padding:36px 24px;
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    color:var(--muted);
+    display:flex;justify-content:space-between;
+  }
+  footer a{color:var(--ink);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rohan Das</h1>
+  <div class="tag">Essays on technology, culture & the internet — Bylines in Mint, The Ken, Rest of World</div>
+</header>
+
+<main>
+
+  <div class="piece">
+    <div class="meta">Essay · The Ken · June 2026</div>
+    <h2>The quiet death of the personal blog</h2>
+    <p>Everyone I know who used to blog has stopped. Not because they ran out of things to say, but because the space where that kind of writing lived — slow, unoptimized, half-finished — has been quietly replaced by feeds that reward the opposite.</p>
+    <div class="margin-note">this one got picked up by three newsletters</div>
+    <blockquote>We didn't stop writing. We just moved somewhere that punishes anything unfinished.</blockquote>
+    <p>What's left isn't a lack of writers. It's a lack of places built for writing that doesn't perform.</p>
+    <a class="read-more" href="#">Continue reading →</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="piece">
+    <div class="meta">Reported feature · Mint · March 2026</div>
+    <h2>Inside India's second-hand smartphone economy</h2>
+    <p>In a narrow lane behind Lamington Road, phones die and are reborn several times before anyone throws them away. This piece follows one handset through four owners and three repair shops.</p>
+    <a class="read-more" href="#">Continue reading →</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="piece">
+    <div class="meta">Column · Rest of World · Jan 2026</div>
+    <h2>The algorithm doesn't know your grandmother</h2>
+    <p>A short essay on what gets lost when recommendation systems flatten every regional festival, dialect and food into the same three trending sounds.</p>
+    <div class="margin-note">favourite piece I've written so far</div>
+    <a class="read-more" href="#">Continue reading →</a>
+  </div>
+
+</main>
+
+<footer>
+  <span>rohan.das@example.com</span>
+  <a href="#">Twitter/X</a>
+  <span>Sample portfolio — demo content</span>
+</footer>
+
+</body>
+</html>
